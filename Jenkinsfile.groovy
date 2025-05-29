@@ -2,8 +2,8 @@ pipeline {
     agent any
     stages {
         stage('hello') {
-            steps {
-                sh "echo hello checkout"
+            steps{
+                echo "hello world"
             }
         }
 
@@ -12,7 +12,7 @@ pipeline {
                 changeset "backend/*"
             }
             steps{
-                sh "echo changed backend"
+                echo "changed backend"
             }
         }
     }
