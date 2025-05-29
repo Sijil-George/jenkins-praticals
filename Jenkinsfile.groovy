@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('hello') {
             steps {
-                echo "hello checkout"
+                sh "echo hello checkout"
             }
         }
 
@@ -12,7 +12,7 @@ pipeline {
                 changeset "backend/*"
             }
             steps{
-                sh echo "changed backend"
+                sh "echo changed backend"
             }
         }
     }
