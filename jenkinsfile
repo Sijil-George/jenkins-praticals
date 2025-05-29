@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    environment {
+        APP_REPO = 'git@github.com:Sijil-George/simple_react_app.git'
+        BRANCH = 'main'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Detect Changes') {
+            steps {
+                script {
+                    def changeLogSets = currentBuild.changeSets
+                    def backendChanged = false
+                    def frontendChanged = false
+                    env.BACKEND_CHANGED = backendChanged.toString()
+                    env.FRONTEND_CHANGED = frontendChanged.toString()
+                }
+            }
+        }
+
+ 
+    }
+}
