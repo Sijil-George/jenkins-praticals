@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deployed'
+                echo 'new depolyment'
             }
         }
     }
