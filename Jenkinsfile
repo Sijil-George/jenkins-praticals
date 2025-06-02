@@ -6,7 +6,7 @@ pipeline {
     CRED1 = credentials("cred1")
     INBETWEEN = "Something in between"
     // this assumes that "cred2" has been created in Jenkins Credentials
-    CRED2 = credentials("cred2")
+    CRED2 = credentials("Sijil-George")
     // Env variables can refer to other variables as well
     OTHER_VAR = "${SOME_VAR}"
   }
