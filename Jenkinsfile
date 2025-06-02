@@ -6,7 +6,7 @@ pipeline {
        * "$FOO_USR" will contain string for Username
        * "$FOO_PSW" will contain string for Password
        */
-      FOO = credentials("3f92aa0e-f6d7-4465-b5b2-7cdf6e69f886")
+      FOO = credentials("d359f81d-671f-4d7e-8a08-338b4fb8cf05")
     }
 
     agent any
@@ -17,6 +17,7 @@ pipeline {
                 // all credential values are available for use but will be masked in console log
                 sh 'echo "FOO is $FOO"'
                 sh 'echo "FOO_USR is $FOO_USR"'
+                sh 'echo "FOO_USR is $FOO_KEY"'
                 sh 'echo "FOO_PSW is $FOO_PSW"'
 
                 //Write to file
