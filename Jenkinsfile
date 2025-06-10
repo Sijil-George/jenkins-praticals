@@ -16,8 +16,18 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    timeout(time:60, unit: 'SECONDS') {
-                        input message: 'Do you want to continue ?', ok:'YES'
+                    def proceed = false
+                    timeout(time: 1, unit: 'MINUTES') {
+                        proceed = input(message: 'Do you want to continue?', ok: 'YES')
+                    }
+                    waitUntil {
+                        if (proceed) {
+                            echo 'Proceeding with the build...'
+                            return true
+                        } else {
+                            echo 'Build aborted due to timeout or user decision.'
+                            error('Build aborted.')
+                        }
                     }
                 }
             }
