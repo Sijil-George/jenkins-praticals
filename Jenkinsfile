@@ -7,11 +7,10 @@ stages {
     stage('Build') {  
         steps {  
             script{
-                 def answer = input message: '<message>',
-parameters: [booleanParam(defaultValue: true,
-description: 'Prerelease setting', name: 'prerelease')]
+                 def answer = input message: 'Do you want to continue ?',
+parameters: [booleanParam(defaultValue: false,
+description: 'click procced if you want to continue', name: 'answer')]
             }
-          
         }  
     }  
 }  
