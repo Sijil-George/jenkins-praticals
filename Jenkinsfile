@@ -6,9 +6,12 @@ parameters {
 stages {  
     stage('Build') {  
         steps {  
-           def answer = input message: '<message>',
+            script{
+                 def answer = input message: '<message>',
 parameters: [booleanParam(defaultValue: true,
 description: 'Prerelease setting', name: 'prerelease')]
+            }
+          
         }  
     }  
 }  
