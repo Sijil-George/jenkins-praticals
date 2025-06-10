@@ -4,7 +4,7 @@ pipeline {
         stage('Display User') {
             steps {
                 script {
-                    echo "Job executed by: ${currentBuild.getUserName()}"
+                    println "CurrentBuild Username:" + getBuildUserInfo().UserName
                 }
             }
         }
