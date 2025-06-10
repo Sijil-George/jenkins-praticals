@@ -6,7 +6,9 @@ parameters {
 stages {  
     stage('Build') {  
         steps {  
-            sh 'echo "Building package type: ${packageType}"'  
+           def answer = input message: '<message>',
+parameters: [booleanParam(defaultValue: true,
+description: 'Prerelease setting', name: 'prerelease')]
         }  
     }  
 }  
