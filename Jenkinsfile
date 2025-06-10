@@ -19,6 +19,7 @@ pipeline {
                     def proceed = false
                     timeout(time: 1, unit: 'MINUTES') {
                         proceed = input(message: 'Do you want to continue?', ok: 'YES')
+                        echo "User chose to proceed: ${proceed}"
                     }
                     waitUntil {
                         if (proceed) {
