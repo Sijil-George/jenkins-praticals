@@ -4,7 +4,12 @@ pipeline {
         stage('Display User') {
             steps {
                 script {
-                    println "CurrentBuild Username:" + getBuildUserInfo().UserName
+                    def user = currentBuild.rawBuild.getCause(Cause.UserIdCause)?.getUserName()
+                    if (user) {
+                        echo "Build triggered by user: ${user}"
+                    } else {
+                        echo 'Build was not triggered by a user.'
+                    }
                 }
             }
         }
