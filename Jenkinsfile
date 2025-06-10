@@ -14,7 +14,7 @@ stages {
         steps {  
             script{
                 timeout(time:60, unit: 'SECONDS') {
-                input message: 'Do you want to continue ?,ok:'YES'
+                input message: 'Do you want to continue ?',ok:'YES'
 }
                  
             }
