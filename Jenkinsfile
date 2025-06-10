@@ -7,7 +7,10 @@ stages {
     stage('Build') {  
         steps {  
             script{
-                 def answer = input message: 'Do you want to continue ?'
+                timeout(time:60, unit: 'SECONDS') {
+def answer = input message: 'Do you want to continue ?'
+}
+                 
             }
         }  
     }  
